@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "893245874517",
+    "project_id": "easymoney-17c05",
+    "storage_bucket": "easymoney-17c05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893245874517:android:284fa6aac7864bcf760fdc",
+        "android_client_info": {
+          "package_name": "com.example.new_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893245874517-maite3rf8j6upc75fjcdb8f2grfku2qi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.new_project",
+            "certificate_hash": "e26c5a39ff595e0db1a82d08e969dbb25358eae0"
+          }
+        },
+        {
+          "client_id": "893245874517-p9tk5n5vj37nh60n3p9bgvdorlm3ln3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxZMZtQv7vzM2XRKmlC-v-nWr1NEEDdIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893245874517-1onimnt5k9t07bnka8j688r4uidlhoh0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "893245874517-r8qjbm4h6264j44cuq7pvm05ccab9q1k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.newProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
