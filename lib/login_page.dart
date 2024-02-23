@@ -35,11 +35,34 @@ class _LogInPageState extends State<LogInPage> {
       FirebaseAuth auth = FirebaseAuth.instance;
 
       try {
+        if (email == "" || password == "") return null;
         UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email,
           password: password,
         );
         if (userCredential.user != null) {
+          // FirebaseFirestore.instance
+          //     .collection('user')
+          //     .doc(FirebaseAuth
+          //         .instance.currentUser!.uid)
+          //     .set({
+          //   'avatar':
+          //       "https://firebasestorage.googleapis.com/v0/b/easymoney-17c05.appspot.com/o/Group%2037172.svg?alt=media&token=47a4b7ef-0e79-4551-8498-f7c1b65aa178",
+          //   "background": "",
+          //   'email': email,
+          //   "followers": 0,
+          //   "following": 0,
+          //   "full_name": email,
+          //   "isAdmin": false,
+          //   "phone": 5555555555,
+          //   "uid": FirebaseAuth
+          //       .instance.currentUser!.uid,
+          //   "plan": "free",
+          //   "startAt": DateTime.now(),
+          //   "username": email,
+          //   // Add other user-related data as needed
+          // });
+          await sharedPreferences!.setBool("remember", isRemember);
           // User is successfully logged in, navigate to the home page
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => HomePage()),
@@ -304,29 +327,6 @@ class _LogInPageState extends State<LogInPage> {
                                     await signInWithEmailAndPassword(
                                         emailController.text,
                                         passwordController.text);
-                                    FirebaseFirestore.instance
-                                        .collection('user')
-                                        .doc(FirebaseAuth
-                                            .instance.currentUser!.uid)
-                                        .set({
-                                      'avatar':
-                                          "https://firebasestorage.googleapis.com/v0/b/easymoney-17c05.appspot.com/o/Group%2037172.svg?alt=media&token=47a4b7ef-0e79-4551-8498-f7c1b65aa178",
-                                      "background": "",
-                                      'email': emailController.text,
-                                      "followers": 0,
-                                      "following": 0,
-                                      "full_name": emailController.text,
-                                      "isAdmin": false,
-                                      "phone": 5555555555,
-                                      "uid": FirebaseAuth
-                                          .instance.currentUser!.uid,
-                                      "plan": "free",
-                                      "startAt": DateTime.now(),
-                                      "username": emailController.text,
-                                      // Add other user-related data as needed
-                                    });
-                                    await sharedPreferences!
-                                        .setBool("remember", isRemember);
                                   },
                                   child: SvgPicture.asset(
                                       "images/loginButton.svg")),
@@ -746,34 +746,7 @@ class _LogInPageState extends State<LogInPage> {
                               InkWell(
                                   splashColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    await signInWithEmailAndPassword(
-                                        emailController.text,
-                                        passwordController.text);
-                                    FirebaseFirestore.instance
-                                        .collection('user')
-                                        .doc(FirebaseAuth
-                                            .instance.currentUser!.uid)
-                                        .set({
-                                      'avatar':
-                                          "https://rayusradiology.com/wp-content/uploads/2018/10/colorSharad_Chopra_256x.jpg",
-                                      "background": "",
-                                      'email': emailController.text,
-                                      "followers": 0,
-                                      "following": 0,
-                                      "full_name": "Martine Doe",
-                                      "isAdmin": false,
-                                      "phone": 5555555555,
-                                      "uid": FirebaseAuth
-                                          .instance.currentUser!.uid,
-                                      "plan": "free",
-                                      "startAt": DateTime.now(),
-                                      "username": "Martine Doe",
-                                      // Add other user-related data as needed
-                                    });
-                                    await sharedPreferences!
-                                        .setBool("remember", isRemember);
-                                  },
+                                  onTap: () async {},
                                   child: SvgPicture.asset(
                                       "images/loginButton.svg")),
                               SizedBox(
