@@ -247,6 +247,7 @@ class _LogInPageState extends State<LogInPage> {
                                             BorderRadius.circular(15.0),
                                         borderSide: BorderSide.none),
                                   ),
+                                  obscureText: true,
                                   // keyboardType: TextInputType.emailAddress,
                                 ),
                               ),

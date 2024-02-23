@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_network/image_network.dart';
 import 'package:new_project/chat_screen.dart';
 import 'package:new_project/colors.dart';
 import 'package:new_project/data/Api.dart';
@@ -371,11 +372,11 @@ class _ResearchState extends State<Research> {
             // height: size.height * 0.09,
             // width: size.width * 0.07,
             child: ClipOval(
-                child: Image.network(
+                child: ImageNetwork(
                     height: size.height * 0.07,
                     width: size.width * 0.07,
-                    fit: BoxFit.fill,
-                    '${widget.users.avatar}')),
+                    fitAndroidIos: BoxFit.fill,
+                    image: '${widget.users.avatar}')),
           ),
           title: Text(
             widget.users.full_name,
